@@ -6,6 +6,8 @@ var mountFolder = function (connect, dir) {
 	return connect.static(require('path').resolve(dir));
 };
 
+var minimatch = require('minimatch');
+
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -14,7 +16,10 @@ var mountFolder = function (connect, dir) {
 
 module.exports = function (grunt) {
 	// load all grunt tasks
-	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+	require('matchdep')
+		.filterDev('grunt-*')
+		.filter(minimatch.filter('!grunt-cli')) //grunt-cli is not a task
+		.forEach(grunt.loadNpmTasks);
 
 	// configurable paths
 	var yeomanConfig = {
@@ -298,7 +303,7 @@ module.exports = function (grunt) {
 		'karma'
 	]);
 
-	grunt.registerTask('build', [
+	grunt.registerTask('build', 'build optimized artifacts for production', [
 		'clean:dist',
 		'useminPrepare',
 		'concurrent:dist',
@@ -312,9 +317,9 @@ module.exports = function (grunt) {
 		'usemin'
 	]);
 
-	grunt.registerTask('default', [
+	grunt.registerTask('ci', 'full gamut of tests for running on CI server', [
 		'jshint',
 		'test',
-		'build'
+		'build' //just make sure this works
 	]);
 };
