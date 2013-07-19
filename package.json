@@ -1,6 +1,8 @@
 {
-  "name": "bingo",
+  "name": "verge-mobile-bingo",
   "version": "0.0.0",
+  "author": "dan smith <XX1011@gmail.com>",
+  "description": "a bingo game for The Verge Mobile Show podcast",
   "dependencies": {
     "grunt-karma": "~0.4.5"
   },
