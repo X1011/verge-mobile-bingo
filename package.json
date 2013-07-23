@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "author": "dan smith <XX1011@gmail.com>",
   "description": "a bingo game for The Verge Mobile Show podcast",
+  "scripts": {
+    "test": "bower install && grunt ci"
+  },
   "dependencies": {
     "grunt-karma": "~0.4.5"
   },
@@ -35,8 +38,5 @@
   },
   "engines": {
     "node": ">=0.8.0"
-  },
-  "scripts": {
-    "test": "bower install && grunt ci"
   }
 }
