@@ -208,6 +208,7 @@ module.exports = function (grunt) {
 			}
 		},
 		concurrent: {
+			options: {logConcurrentOutput: true},
 			server: [
 				'coffee:dist'
 			],
@@ -318,7 +319,10 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', 'build optimized artifacts for production', [
 		'clean:dist',
 		'useminPrepare',
-		'concurrent:dist',
+		//'concurrent:dist', //concurrent is causing failures
+		'coffee',
+		'imagemin',
+		'htmlmin',
 		'concat',
 		'copy',
 		'cdnify',
