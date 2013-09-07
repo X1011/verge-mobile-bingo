@@ -51,7 +51,7 @@ module.exports = function (grunt) {
 			},
 			jshint: {
 				options: {atBegin: true},
-				files: hinted_js.concat(['.jshintrc']),
+				files: hinted_js.concat('.jshintrc'),
 				tasks: ['jshint']
 			},
 			unitTest: {
