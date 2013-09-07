@@ -1,13 +1,3 @@
 'use strict';
 
-angular.module('bingoApp', [])
-	.config(function ($routeProvider) {
-		$routeProvider
-			.when('/', {
-				templateUrl: 'views/main.html',
-				controller: 'MainCtrl'
-			})
-			.otherwise({
-				redirectTo: '/'
-			});
-	});
+angular.module('bingoApp', []);
