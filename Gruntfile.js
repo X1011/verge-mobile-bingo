@@ -27,9 +27,10 @@ module.exports = function (grunt) {
 		dist: 'dist'
 	};
 
-	try {
-		yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
-	} catch (e) {}
+	var app_js = '<%= yeoman.app %>/scripts/{,*/}*.js';
+	var test_js = 'test/**/*.js';
+	var hinted_js = [app_js, test_js, 'Gruntfile.js'];
+	var lib_js = '<%= yeoman.app %>/bower_components/**/*.js';
 
 	grunt.initConfig({
 		yeoman: yeomanConfig,
@@ -247,43 +248,27 @@ module.exports = function (grunt) {
 		},
 		jshint: {
 			options: {jshintrc: '.jshintrc'},
-			all: [
-				'Gruntfile.js',
-				'<%= yeoman.app %>/scripts/{,*/}*.js'
-			]
+			all: hinted_js
 		},
 		watch: {
-			coffee: {
-				files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-				tasks: ['coffee:dist']
-			},
-			coffeeTest: {
-				files: ['test/spec/{,*/}*.coffee'],
-				tasks: ['coffee:test']
-			},
 			livereload: {
 				options: {livereload: LIVERELOAD_PORT},
 				files: [
 					'<%= yeoman.app %>/{,*/}*.html',
 					'{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
-					'{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+					app_js,
+					lib_js
 				]
 			},
 			jshint: {
 				options: {atBegin: true},
-				files: [
-					'Gruntfile.js',
-					'{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js'
-				],
+				files: hinted_js,
 				tasks: ['jshint']
 			},
 			unitTest: {
 				options: {atBegin: true},
-				files: [
-					'{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-					'{,.tmp/}test/**/*.js'
-				],
+				files: [app_js, lib_js, test_js],
 				tasks: ['karma:background:run']
 			}
 		},
