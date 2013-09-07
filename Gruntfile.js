@@ -34,6 +34,37 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		yeoman: yeomanConfig,
+		jshint: {
+			options: {jshintrc: '.jshintrc'},
+			all: hinted_js
+		},
+		watch: {
+			jshint: {
+				options: {atBegin: true},
+				files: hinted_js,
+				tasks: ['jshint']
+			},
+			livereload: {
+				options: {livereload: LIVERELOAD_PORT},
+				files: [
+					'<%= yeoman.app %>/{,*/}*.html',
+					'{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+					app_js,
+					lib_js
+				]
+			},
+			unitTest: {
+				options: {atBegin: true},
+				files: [app_js, lib_js, test_js],
+				tasks: ['karma:background:run']
+			}
+		},
+		karma: {
+			options: {configFile: 'karma.conf.js'},
+			background: {background: true},
+			single: {singleRun: true}
+		},
 		connect: {
 			options: {
 				port: 3000,
@@ -245,37 +276,6 @@ module.exports = function (grunt) {
 					]
 				}
 			}
-		},
-		jshint: {
-			options: {jshintrc: '.jshintrc'},
-			all: hinted_js
-		},
-		watch: {
-			livereload: {
-				options: {livereload: LIVERELOAD_PORT},
-				files: [
-					'<%= yeoman.app %>/{,*/}*.html',
-					'{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
-					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-					app_js,
-					lib_js
-				]
-			},
-			jshint: {
-				options: {atBegin: true},
-				files: hinted_js,
-				tasks: ['jshint']
-			},
-			unitTest: {
-				options: {atBegin: true},
-				files: [app_js, lib_js, test_js],
-				tasks: ['karma:background:run']
-			}
-		},
-		karma: {
-			options: {configFile: 'karma.conf.js'},
-			background: {background: true},
-			single: {singleRun: true}
 		}
 	});
 
