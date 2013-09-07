@@ -35,5 +35,12 @@
   },
   "engines": {
     "node": ">=0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/X1011/verge-mobile-bingo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/X1011/verge-mobile-bingo/issues"
   }
 }
