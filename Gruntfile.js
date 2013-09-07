@@ -39,11 +39,6 @@ module.exports = function (grunt) {
 			all: hinted_js
 		},
 		watch: {
-			jshint: {
-				options: {atBegin: true},
-				files: hinted_js,
-				tasks: ['jshint']
-			},
 			livereload: {
 				options: {livereload: LIVERELOAD_PORT},
 				files: [
@@ -53,6 +48,11 @@ module.exports = function (grunt) {
 					app_js,
 					lib_js
 				]
+			},
+			jshint: {
+				options: {atBegin: true},
+				files: hinted_js.concat(['.jshintrc']),
+				tasks: ['jshint']
 			},
 			unitTest: {
 				options: {atBegin: true},
