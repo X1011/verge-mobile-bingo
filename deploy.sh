@@ -39,7 +39,7 @@ if ! git diff --exit-code --quiet --cached; then
 	exit 1
 fi
 
-echo $authenticity_override | git fetch $repo $deploy_branch:$deploy_branch
+echo $authenticity_override | git fetch --force $repo $deploy_branch:$deploy_branch
 
 #make deploy_branch the current branch
 git symbolic-ref HEAD refs/heads/$deploy_branch
