@@ -1,0 +1,1 @@
+"use strict";function Bingo(a){a.board=newBoard(5,5)}function newBoard(a,b){for(var c=new Array(a),d=0;a>d;d++)for(var e=c[d]=new Array(b),f=0;b>f;f++)e[f]={};return c}
