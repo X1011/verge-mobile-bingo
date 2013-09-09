@@ -5,7 +5,7 @@ deploy_directory=dist
 deploy_branch=gh-pages
 
 #must be readable and writable
-repo=git@github.com:X1011/verge-mobile-bingo.git
+repo=origin
 
 #when ssh can't establish the authenticity of a host and asks whether to continue, use this answer
 #(this defeat's ssh's protection against man-in-the-middle attacks, but who actually ever checks RSA key fingerprints, anyway?)
