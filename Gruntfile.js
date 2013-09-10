@@ -311,9 +311,9 @@ module.exports = function (grunt) {
 		'concat',
 		'copy',
 		'cdnify',
-		'ngmin',
 		'cssmin',
-		'uglify',
+		//'ngmin',
+		//'uglify', //I'm not using modules right now, and apparently ngmin doesn't work without them, and I don't want to have to bother with the minsafe syntax, so just disabling js minification for now
 		'rev',
 		'usemin'
 	]);
