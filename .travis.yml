@@ -1,1 +1,6 @@
 language: node_js
+after_success:
+    - ./deploy.sh --verbose
+env:
+    global:
+        - secure: "TZV7VCZEjFSgn7evSorGPpixNhxkJm8Wo2NjUx0XcaIXlKa9VuW3olvxMOewfquzs90j/5q1t9TDoz1j9peP/MPTmMFlPT6rU423tYFzazCJ21qEsH8nlHOofhHMS0+0x+0H6akk5Dr1YvFpwpmkA798D2Jw0qIR7AhCb/J9njg="

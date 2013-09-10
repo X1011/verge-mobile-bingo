@@ -5,11 +5,8 @@ deploy_directory=dist
 deploy_branch=gh-pages
 
 #must be readable and writable
-repo=origin
-
-#when ssh can't establish the authenticity of a host and asks whether to continue, use this answer
-#(this defeat's ssh's protection against man-in-the-middle attacks, but who actually ever checks RSA key fingerprints, anyway?)
-authenticity_override=yes
+#using https url to avoid issues with ssh host authenticity checks
+repo=https://$GITHUB_TOKEN@github.com/X1011/verge-mobile-bingo.git
 
 #if no user identity is already set in the current git environment, use this:
 default_username=deploy.sh
@@ -39,7 +36,7 @@ if ! git diff --exit-code --quiet --cached; then
 	exit 1
 fi
 
-echo $authenticity_override | git fetch --force $repo $deploy_branch:$deploy_branch
+git fetch --force $repo $deploy_branch:$deploy_branch
 
 #make deploy_branch the current branch
 git symbolic-ref HEAD refs/heads/$deploy_branch
@@ -59,7 +56,7 @@ case $diff in
 		set_user_id
 		git --work-tree "$deploy_directory" commit -m \
 			"publish: $commit_title"$'\n\n'"generated from commit $commit_hash"
-		echo $authenticity_override | git push $repo $deploy_branch
+		git push $repo $deploy_branch
 		;;
 	*)
 		echo git diff exited with code $diff. Aborting.
