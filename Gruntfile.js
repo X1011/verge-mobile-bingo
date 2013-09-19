@@ -50,12 +50,18 @@ module.exports = function (grunt) {
 				]
 			},
 			jshint: {
-				options: {atBegin: true},
+				options: {
+					atBegin: true,
+					spawn: false
+				},
 				files: hinted_js.concat('.jshintrc'),
 				tasks: ['jshint']
 			},
 			unitTest: {
-				options: {atBegin: true},
+				options: {
+					atBegin: true,
+					spawn: false
+				},
 				files: [app_js, lib_js, test_js],
 				tasks: ['karma:background:run']
 			}
@@ -279,7 +285,7 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('server', 'development server. includes LiveReload and test watch', function (target) {
+	grunt.registerTask('dev', 'development server. includes LiveReload and test watch', function (target) {
 		if (target === 'dist') {
 			return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
 		}
