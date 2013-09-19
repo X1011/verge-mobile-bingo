@@ -7,7 +7,7 @@
 	"curly": false,
 	"eqeqeq": true,
 	"immed": true,
-	"latedef": "nofunc",
+	"latedef": false,
 	"newcap": true,
 	"noarg": true,
 	"quotmark": "single",
@@ -17,6 +17,7 @@
 	"strict": true,
 	"trailing": true,
 	"smarttabs": true,
+	"shadow": true,
 	"globals": {
 		"angular": false,
 		"inject": false,

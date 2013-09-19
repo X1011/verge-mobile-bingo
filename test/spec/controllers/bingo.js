@@ -1,4 +1,5 @@
 'use strict';
+/*global board*/
 
 describe('Bingo', function() {
 
@@ -13,6 +14,10 @@ describe('Bingo', function() {
 		});
 	}));
 	
-	it('should do nothing', function() {
+});
+
+describe('board', function() {
+	it('should populate the squares with the given texts', function() {
+		expect(board(['text'], 1, 1)).toEqual([[{text: 'text'}]]);
 	});
 });

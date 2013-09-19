@@ -52,7 +52,7 @@ module.exports = function (grunt) {
 			jshint: {
 				options: {
 					atBegin: true,
-					spawn: false
+					spawn: true
 				},
 				files: hinted_js.concat('.jshintrc'),
 				tasks: ['jshint']
