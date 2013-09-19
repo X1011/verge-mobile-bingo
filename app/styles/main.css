@@ -12,9 +12,7 @@ small {
 	background: blue;
 }
 
-td > a {
-	text-decoration: none;
-	color: white;
-	display: block;
+td {
 	padding: .5em;
+	cursor: pointer;
 }

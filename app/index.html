@@ -28,12 +28,10 @@
 	
 	<table ng-controller='Bingo'>
 		<tr ng-repeat='row in board'>
-			<td ng-repeat='square in row'>
-				<a ng-click='marked = !marked'
-				   ng-class='{marked: marked}'
-				   href=''>
+			<td ng-repeat='square in row'
+			    ng-click='marked = !marked'
+			    ng-class='{marked: marked}'>
 					{{square.text}}
-				</a>
 			</td>
 		</tr>
 	</table>
