@@ -28,13 +28,15 @@
 
 <table ng-controller='Bingo'>
 	<tr ng-repeat='row in board'>
-		<td ng-repeat='square in row'>
-			square
+		<td ng-repeat='square in row'
+		    ng-click='marked = !marked'
+			ng-class='{marked: marked}'>
+			This is where the phrase goes
 		</td>
 	</tr>
 </table>
 
-<p>this site is not affiliated with Vox Media Inc.</p>
+<p>This site is not affiliated with Vox Media Inc.</p>
 
 
 <script>
