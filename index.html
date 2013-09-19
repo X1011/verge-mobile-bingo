@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	
-	<link rel="stylesheet" href="styles/10be714f.main.css">
+	<link rel="stylesheet" href="styles/0f22e404.main.css">
 </head>
 <body ng-app="">
 <!--[if lt IE 7]>
@@ -26,13 +26,13 @@
 
 <table ng-controller="Bingo">
 	<tr ng-repeat="row in board">
-		<td ng-repeat="square in row">
-			square
+		<td ng-repeat="square in row" ng-click="marked = !marked" ng-class="{marked: marked}">
+			This is where the phrase goes
 		</td>
 	</tr>
 </table>
 
-this site is not affiliated with Vox Media Inc.
+<p>This site is not affiliated with Vox Media Inc.</p>
 
 
 <script>
