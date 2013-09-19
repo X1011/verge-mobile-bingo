@@ -40,5 +40,6 @@ var texts = [
 	'“We’ve got a lot to talk about”',
 	'PureView',
 	'Dieter spinning in his chair',
-	'Sprint bashing'
+	'Sprint bashing',
+	'2 or more Vergecasters in the same room'
 ];
