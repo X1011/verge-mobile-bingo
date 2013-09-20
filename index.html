@@ -11,40 +11,40 @@
 	<meta name="viewport" content="width=device-width">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	
-	<link rel="stylesheet" href="styles/0f22e404.main.css">
+	<link rel="stylesheet" href="styles/ec6518b8.main.css">
 </head>
 <body ng-app="">
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-<![endif]-->
+	<!--[if lt IE 7]>
+	<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+	<![endif]-->
+		
+	<!--[if lt IE 9]>
+	<script src="bower_components/es5-shim/es5-shim.js"></script>
+	<script src="bower_components/json3/lib/json3.min.js"></script>
+	<![endif]-->
 	
-<!--[if lt IE 9]>
-<script src="bower_components/es5-shim/es5-shim.js"></script>
-<script src="bower_components/json3/lib/json3.min.js"></script>
-<![endif]-->
-
-
-<table ng-controller="Bingo">
-	<tr ng-repeat="row in board">
-		<td ng-repeat="square in row" ng-click="marked = !marked" ng-class="{marked: marked}">
-			This is where the phrase goes
-		</td>
-	</tr>
-</table>
-
-<p>This site is not affiliated with Vox Media Inc.</p>
-
-
-<script>
-	var _gaq=[['_setAccount','UA-195077-2'],['_trackPageview']];
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-	g.src='//www.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
-
-<script src="bower_components/angular/angular.js"></script>
-
-<script src="scripts/a0a58a40.scripts.js"></script>
+	
+	<table ng-controller="Bingo">
+		<tr ng-repeat="row in board">
+			<td ng-repeat="square in row" ng-click="marked = !marked" ng-class="{marked: marked}">
+					{{square.text}}
+			</td>
+		</tr>
+	</table>
+	
+	<p><small>This site is not affiliated with Vox Media Inc.</small></p>
+	
+	
+	<script>
+		var _gaq=[['_setAccount','UA-195077-2'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src='//www.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+	
+	<script src="bower_components/angular/angular.js"></script>
+	
+	<script src="scripts/e699e446.scripts.js"></script>
 	
 </body>
 </html>
