@@ -44,5 +44,10 @@ var texts = [
 	'PureView',
 	'Dieter spinning in his chair',
 	'Sprint bashing',
-	'2 or more Vergecasters in the same room'
+	'2 or more Vergecasters in the same room',
+	'a Vergecaster is in the studio',
+	'Dieter and Vlad are out of sync on transitions',
+	'Windows Phone has no apps',
+	'awkward silence',
+	'skipped a week'
 ];
