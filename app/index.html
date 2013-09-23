@@ -26,7 +26,7 @@
 	<![endif]-->
 	
 	
-	<table ng-controller='Bingo'>
+	<table ng-controller='Bingo' id='board'>
 		<tr ng-repeat='row in board'>
 			<td ng-repeat='square in row'
 			    ng-click='marked = !marked'
@@ -35,6 +35,9 @@
 			</td>
 		</tr>
 	</table>
+	
+	<p><iframe src="http://ghbtns.com/github-btn.html?user=X1011&repo=verge-mobile-bingo&type=watch&count=true"
+		   allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></p>
 	
 	<p><small>This site is not affiliated with Vox Media Inc.</small></p>
 	

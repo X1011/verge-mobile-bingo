@@ -16,3 +16,7 @@ td {
 	padding: .5em;
 	cursor: pointer;
 }
+
+#board {
+	margin-bottom: 3em;
+}
