@@ -4,12 +4,10 @@ body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-small {
-	color: #aaa;
-}
-
-.marked {
-	background: blue;
+#board {
+	max-width: 50em;
+	margin: auto;
+	margin-bottom: 3em;
 }
 
 td {
@@ -18,8 +16,8 @@ td {
 	cursor: pointer;
 }
 
-#board {
-	max-width: 50em;
-	margin: auto;
-	margin-bottom: 3em;
-}
+.marked {background: blue}
+
+a {color: #6ba0ff}
+a:visited {color: #a06bff}
+small {color: #aaa}
