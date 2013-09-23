@@ -19,5 +19,7 @@ td {
 }
 
 #board {
+	max-width: 50em;
+	margin: auto;
 	margin-bottom: 3em;
 }
