@@ -13,6 +13,7 @@ small {
 }
 
 td {
+	width: 20%;
 	padding: .5em;
 	cursor: pointer;
 }
