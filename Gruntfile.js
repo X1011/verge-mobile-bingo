@@ -286,7 +286,7 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('dev', 'development server. includes LiveReload and test watch', function (target) {
+	grunt.registerTask('default', 'development server. includes LiveReload and test watch', function (target) {
 		if (target === 'dist') {
 			return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
 		}
