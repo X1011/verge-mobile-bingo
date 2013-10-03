@@ -5,7 +5,7 @@ deploy_directory=dist
 deploy_branch=gh-pages
 
 #must be readable and writable
-#using https url to avoid issues with ssh host authenticity checks
+#using https url instead of ssh to avoid issues with host authenticity checks
 repo=https://$GITHUB_TOKEN@github.com/X1011/verge-mobile-bingo.git
 
 #if no user identity is already set in the current git environment, use this:
@@ -13,14 +13,31 @@ default_username=deploy.sh
 default_email=XX1011+deploy.sh@gmail.com
 
 if [[ $1 = "-v" || $1 = "--verbose" ]]; then
-	#echo expanded commands as they are executed
-	set -o xtrace
+	verbose=true
 fi
+
+#echo expanded commands as they are executed (for debugging)
+function enable_expanded_output {
+	if [ $verbose ]; then
+		set -o xtrace
+		set +o verbose
+	fi
+}
+
+#this is used to avoid outputting any secret token in the repo URL
+function disable_expanded_output {
+	if [ $verbose ]; then
+		set +o xtrace
+		set -o verbose
+	fi
+}
+
+enable_expanded_output
 
 commit_title=`git log -n 1 --format="%s" HEAD`
 commit_hash=`git log -n 1 --format="%H" HEAD`
 
-set_user_id() {
+function set_user_id {
 	if [[ -z `git config user.name` ]]; then
 		git config user.name "$default_username"
 	fi
@@ -36,7 +53,9 @@ if ! git diff --exit-code --quiet --cached; then
 	exit 1
 fi
 
+disable_expanded_output
 git fetch --force $repo $deploy_branch:$deploy_branch
+enable_expanded_output
 
 #make deploy_branch the current branch
 git symbolic-ref HEAD refs/heads/$deploy_branch
@@ -56,7 +75,10 @@ case $diff in
 		set_user_id
 		git --work-tree "$deploy_directory" commit -m \
 			"publish: $commit_title"$'\n\n'"generated from commit $commit_hash"
-		git push $repo $deploy_branch
+		
+		disable_expanded_output
+		git push --quiet $repo $deploy_branch
+		enable_expanded_output
 		;;
 	*)
 		echo git diff exited with code $diff. Aborting.
