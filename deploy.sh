@@ -4,13 +4,13 @@ set -o errexit #abort if any command fails
 deploy_directory=dist
 deploy_branch=gh-pages
 
-#must be readable and writable
-#using https url instead of ssh to avoid issues with host authenticity checks
-repo=https://$GITHUB_TOKEN@github.com/X1011/verge-mobile-bingo.git
-
 #if no user identity is already set in the current git environment, use this:
 default_username=deploy.sh
 default_email=XX1011+deploy.sh@gmail.com
+
+#repository to deploy to. must be readable and writable.
+#using https url instead of ssh to avoid issues with host authenticity checks
+repo=https://$GITHUB_TOKEN@github.com/X1011/verge-mobile-bingo.git
 
 if [[ $1 = "-v" || $1 = "--verbose" ]]; then
 	verbose=true
@@ -24,7 +24,7 @@ function enable_expanded_output {
 	fi
 }
 
-#this is used to avoid outputting any secret token in the repo URL
+#this is used to avoid outputting the repo URL, which may contain a secret token
 function disable_expanded_output {
 	if [ $verbose ]; then
 		set +o xtrace
@@ -76,6 +76,7 @@ case $diff in
 			"publish: $commit_title"$'\n\n'"generated from commit $commit_hash"
 		
 		disable_expanded_output
+		#--quiet is important here to avoid outputting the repo URL, which may contain a secret token
 		git push --quiet $repo $deploy_branch
 		enable_expanded_output
 		;;
