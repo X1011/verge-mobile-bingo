@@ -66,8 +66,7 @@ git --work-tree "$deploy_directory" reset --mixed --quiet
 git --work-tree "$deploy_directory" add --all
 
 set +o errexit
-git --work-tree "$deploy_directory" diff --exit-code --quiet HEAD
-diff=$?
+diff=$(git --work-tree "$deploy_directory" diff --exit-code --quiet HEAD)$?
 set -o errexit
 case $diff in
 	0) echo No changes to files in $deploy_directory. Skipping commit.;;
