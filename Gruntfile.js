@@ -284,7 +284,7 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-        htmlrefs: {dist: {src: '<%= yeoman.dist %>/index.html'}}
+		htmlrefs: {dist: {src: '<%= yeoman.dist %>/index.html'}}
 	});
 
 	grunt.registerTask('default', 'development server. includes LiveReload and test watch', function (target) {
@@ -318,11 +318,11 @@ module.exports = function (grunt) {
 		'htmlmin',
 		'concat',
 		'copy',
-        //using htmlrefs to cdnify manually instead grunt-google-cdn, because apparently it has hard-coded the versions of the libraries it supports, and it currently does not include Angular 1.2 >_>
-        'htmlrefs',
-        //'cdnify',
+		//using htmlrefs to cdnify manually instead grunt-google-cdn, because apparently it has hard-coded the versions of the libraries it supports, and it currently does not include Angular 1.2 >_>
+		'htmlrefs',
+		//'cdnify',
 		'cssmin',
-        //I'm not using modules right now, and apparently ngmin doesn't work without them, and I don't want to have to bother with the minsafe syntax, so just disabling js minification for now
+		//I'm not using modules right now, and apparently ngmin doesn't work without them, and I don't want to have to bother with the minsafe syntax, so just disabling js minification for now
 		//'ngmin',
 		//'uglify',
 		'rev',
