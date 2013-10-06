@@ -38,19 +38,19 @@
 	
 	bingo for <a target='_blank' href='http://theverge.com/video/the-verge-mobile-show'>The Verge Mobile Show</a>
 	
-	<p><iframe src='http://ghbtns.com/github-btn.html?user=X1011&repo=verge-mobile-bingo&type=watch&count=true'
-		   allowtransparency='true' frameborder='0' scrolling='0' width='100' height='20'></iframe></p>
-	
+	<p class='pw-widget' pw:counter='horizontal' pw:layout='horizontal'>
+		<a class='pw-button-facebook-like'></a>
+		<a class='pw-button-twitter look-native'></a>
+		<a class='pw-button-google-plus'></a>
+		<a class='pw-button-post-share'></a>
+		<iframe src='http://ghbtns.com/github-btn.html?user=X1011&repo=verge-mobile-bingo&type=watch&count=true'
+			id='star' allowtransparency='true' frameborder='0' scrolling='0' width='100' height='20'>
+		</iframe>
+	</p>
+		
 	<p><small>This site is not affiliated with Vox Media Inc.</small></p>
 	
 	
-	<script>
-		var _gaq=[['_setAccount','UA-195077-2'],['_trackPageview']];
-		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-		g.src='//www.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g,s)}(document,'script'));
-	</script>
-
 	<!-- ref:js //ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js -->
 	<script src='bower_components/angular/angular.js'></script>
 	<!-- endref -->
@@ -59,6 +59,26 @@
 	<script src='scripts/app.js'></script>
 	<script src='scripts/controllers/bingo.js'></script>
 	<!-- endbuild -->
+	
+	<script>
+		//config for po.st widget
+		var pwidget_config = {
+			defaults: {
+				sharePopups: true,
+				transformations: {shorten: false},
+				services: {twitter: {via: 'x1011_'}},
+				gaTrackSocialInteractions: true
+			}
+		};
+	</script>
+	<script src="http://i.po.st/static/v3/post-widget.js#publisherKey=vjardcusbg7g666f86p7"></script>
+	
+	<script>
+		var _gaq=[['_setAccount','UA-195077-2'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src='//www.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
 	
 </body>
 </html>

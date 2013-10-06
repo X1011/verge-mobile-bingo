@@ -20,4 +20,11 @@ td {
 
 a {color: #6ba0ff}
 a:visited {color: #a06bff}
+
+#star {
+  vertical-align: bottom;
+  margin-left: 7px;
+  margin-bottom: 1px;
+}
+
 small {color: #aaa}
