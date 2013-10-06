@@ -5,9 +5,9 @@
   "dependencies": {
     "angular": "1.2.0-rc.2"
   },
+  "gitHead": "d60fe144f474acf3ce6939f2d5939ecc2bfeaf1d",
   "readme": "bower-angular-scenario\n======================\n\nbower repo for angular-scenario.js",
   "readmeFilename": "README.md",
-  "gitHead": "d60fe144f474acf3ce6939f2d5939ecc2bfeaf1d",
   "_id": "angular-scenario@1.2.0-rc.2",
   "description": "bower-angular-scenario ======================",
   "repository": {

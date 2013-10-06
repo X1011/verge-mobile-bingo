@@ -5,9 +5,9 @@
   "dependencies": {
     "angular": "1.2.0-rc.2"
   },
-  "gitHead": "9bdf39463a7e59c35f4f6163853c8da4fbf81ea3",
   "readme": "bower-angular-mocks\n===================\n\nangular-mocks.js bower repo",
   "readmeFilename": "README.md",
+  "gitHead": "9bdf39463a7e59c35f4f6163853c8da4fbf81ea3",
   "_id": "angular-mocks@1.2.0-rc.2",
   "description": "bower-angular-mocks ===================",
   "repository": {
