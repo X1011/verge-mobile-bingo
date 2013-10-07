@@ -8,10 +8,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>The Verge Mobile Show Bingo</title>
 	<meta name="description" content="a bingo game for The Verge Mobile Show podcast">
-	<meta name="viewport" content="width=device-width">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	
-	<link rel="stylesheet" href="styles/bb2b81ae.main.css">
+	<link rel="stylesheet" href="styles/220d7675.main.css">
 </head>
 <body ng-app="">
 	<!--[if lt IE 7]>
@@ -25,29 +24,29 @@
 	
 	
 	<table ng-controller="Bingo" id="board">
-		<tr ng-repeat="row in board">
-			<td ng-repeat="square in row" ng-click="marked = !marked" ng-class="{marked: marked}">
+		<tr ng-repeat="row in board" class="row">
+			<td ng-repeat="square in row" ng-click="marked = !marked" ng-class="{marked: marked}" class="square">
 					{{square.text}}
 			</td>
 		</tr>
 	</table>
 	
-	bingo for <a target="_blank" href="http://theverge.com/video/the-verge-mobile-show">The Verge Mobile Show</a>
+	<p>bingo for <a target="_blank" href="http://theverge.com/video/the-verge-mobile-show">The Verge Mobile Show</a></p>
 	
-	<p class="pw-widget" pw:counter="horizontal" pw:layout="horizontal">
+	<div class="pw-widget" pw:counter="horizontal" pw:layout="horizontal">
 		<a class="pw-button-facebook-like"></a>
 		<a class="pw-button-twitter look-native"></a>
 		<a class="pw-button-google-plus"></a>
 		<a class="pw-button-post-share"></a>
-		<iframe id="star" src="http://ghbtns.com/github-btn.html?user=X1011&repo=verge-mobile-bingo&type=watch&count=true" iframe="">
-	</iframe></p>
+		<iframe id="star" src="http://ghbtns.com/github-btn.html?user=X1011&repo=verge-mobile-bingo&type=watch&count=true"></iframe>
+	</div>
 		
 	<p><small>This site is not affiliated with Vox Media Inc.</small></p>
 	
 	
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
 	
-	<script src="scripts/e916847e.scripts.js"></script>
+	<script src="scripts/5a932de8.scripts.js"></script>
 	
 	<script>
 		//config for po.st widget

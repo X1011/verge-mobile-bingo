@@ -1,7 +1,4 @@
 'use strict';
-
-
-'use strict';
 /*jshint quotmark: false*/
 
 function Bingo($scope) {
