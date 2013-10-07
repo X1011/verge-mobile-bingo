@@ -26,25 +26,26 @@
 	<![endif]-->
 	
 	
-	<table ng-controller='Bingo' id='board'>
-		<tr ng-repeat='row in board'>
-			<td ng-repeat='square in row'
+	<div ng-controller='Bingo' id='board'>
+		<div ng-repeat='row in board' class='row'>
+			<div ng-repeat='square in row'
 			    ng-click='marked = !marked'
-			    ng-class='{marked: marked}'>
-					{{square.text}}
-			</td>
-		</tr>
-	</table>
+			    ng-class='{marked: marked}'
+			    class='square'>
+					<div class='text'>{{square.text}}</div>
+			</div>
+		</div>
+	</div>
 	
-	bingo for <a target='_blank' href='http://theverge.com/video/the-verge-mobile-show'>The Verge Mobile Show</a>
+	<p>bingo for <a target='_blank' href='http://theverge.com/video/the-verge-mobile-show'>The Verge Mobile Show</a></p>
 	
-	<p class='pw-widget' pw:counter='horizontal' pw:layout='horizontal'>
+	<div class='pw-widget' pw:counter='horizontal' pw:layout='horizontal'>
 		<a class='pw-button-facebook-like'></a>
 		<a class='pw-button-twitter look-native'></a>
 		<a class='pw-button-google-plus'></a>
 		<a class='pw-button-post-share'></a>
 		<iframe id='star' src='http://ghbtns.com/github-btn.html?user=X1011&repo=verge-mobile-bingo&type=watch&count=true'></iframe>
-	</p>
+	</div>
 		
 	<p><small>This site is not affiliated with Vox Media Inc.</small></p>
 	
