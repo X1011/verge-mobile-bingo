@@ -8,10 +8,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>The Verge Mobile Show Bingo</title>
 	<meta name="description" content="a bingo game for The Verge Mobile Show podcast">
-	<meta name="viewport" content="width=device-width">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	
-	<link rel="stylesheet" href="styles/79a673c1.main.css">
+	<link rel="stylesheet" href="styles/220d7675.main.css">
 </head>
 <body ng-app="">
 	<!--[if lt IE 7]>
@@ -24,13 +23,13 @@
 	<![endif]-->
 	
 	
-	<div ng-controller="Bingo" id="board">
-		<div ng-repeat="row in board" class="row">
-			<div ng-repeat="square in row" ng-click="marked = !marked" ng-class="{marked: marked}" class="square">
-					<div class="text">{{square.text}}</div>
-			</div>
-		</div>
-	</div>
+	<table ng-controller="Bingo" id="board">
+		<tr ng-repeat="row in board" class="row">
+			<td ng-repeat="square in row" ng-click="marked = !marked" ng-class="{marked: marked}" class="square">
+					{{square.text}}
+			</td>
+		</tr>
+	</table>
 	
 	<p>bingo for <a target="_blank" href="http://theverge.com/video/the-verge-mobile-show">The Verge Mobile Show</a></p>
 	
