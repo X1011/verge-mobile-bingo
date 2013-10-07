@@ -1,3 +1,10 @@
+/* apply a natural box layout model to all elements */
+* {
+     -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+ }
+
 body {
 	background: black;
 	color: white;
@@ -5,17 +12,20 @@ body {
 }
 
 #board {
-	max-width: 50em;
 	margin: auto;
 	margin-bottom: 3em;
 }
 
-td {
-	width: 20%;
+.square {
+	width: 7.3em;
+	height: 7.3em;
+	min-width: 7.3em;
+	
 	padding: .5em;
+	text-align: center;
 	cursor: pointer;
 }
-
+td {vertical-align: middle}
 .marked {background: blue}
 
 a {color: #6ba0ff}
