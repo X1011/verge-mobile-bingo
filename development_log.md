@@ -60,5 +60,5 @@ I may revisit this if I ever implement [viewport-relative font scaling](http://d
 - win detection
 - win sharing
 
-&nbsp;
+![tracking](http://www.google-analytics.com/__utm.gif?utmac=UA-195077-2&utmdt=development_log.md&utmhn=github.com&utmp=/X1011/verge-mobile-bingo/blob/master/development_log.md)
 > Written with [StackEdit](http://benweet.github.io/stackedit/).
