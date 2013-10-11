@@ -2,11 +2,12 @@
 
 I started with the [Yeoman](http://yeoman.io) Angular generator, which set me up with a template for an [AngularJS](http://angularjs.org) app that includes:
 
+- [HTML5 Boilerplate](http://html5boilerplate.com)
 - [Bower](http://bower.io) for front-end package management
 - [Jasmine](http://pivotal.github.io/jasmine) to write tests
 - [Karma](http://karma-runner.github.io) to run tests
 - a minifying [Grunt](http://gruntjs.com) build task
-- [LiveReload](http://livereload.com) to automatically update the page in my browser whenever I save a file
+- a preview server with [LiveReload](http://livereload.com) to automatically update the page in my browser whenever I save a file
 
 There were some things missing for a full continuous deployment system, though, so I:
 
