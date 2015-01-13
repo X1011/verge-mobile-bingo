@@ -1,0 +1,10 @@
+{
+
+"commands": {
+},
+
+"preview": {
+	"ungit": "https://{{domain}}:9501/#/repository?path=/home/codio/workspace"
+}
+
+}
