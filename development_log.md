@@ -53,7 +53,7 @@ I may revisit this if I ever implement [viewport-relative font scaling](http://d
 
 ### to do
 
-- measure actual use with Google Analytics event tracking 
+- measure actual use with event tracking on clicks
 - persistence, to survive page unloads in mobile browsers
 - board randomization
 - favicon
