@@ -12,7 +12,7 @@ I started with the [Yeoman](http://yeoman.io) Angular generator, which set me up
 There were some things missing for a full continuous deployment system, though, so I:
 
 - created a task to automatically run [JSHint](http://jshint.com) and the unit tests whenever I save a file
-- got the test and build running on 5 different CI services to compare them and see which one I liked best
+- got the test and build running on 5 different CI services to [compare them](http://clktr4ck.com/X1011?from=bingo&ddu=https://docs.google.com/spreadsheets/d/1zeUaJV1EMn9njPVl3CwixPHzHRHBPF2QLrZSt2vJouw/edit) and see which one I liked best
 	- I had to [define the project's dependencies](https://github.com/X1011/verge-mobile-bingo/compare/153d2399f...9d61731677?w=1#diff-3) more rigorously than the Yeoman template did, because it makes some implicit assumptions about the development environment.
 - wrote and open sourced [a script](https://github.com/X1011/git-directory-deploy) to deploy to [GitHub Pages](http://pages.github.com)
 - [set Travis CI to deploy](https://github.com/X1011/verge-mobile-bingo/compare/32c2f7818f...15f14caaee) all successfully tested and built changes using a GitHub OAuth token stored in a secure environment variable
